@@ -39,3 +39,29 @@ console.log(reverseArray(arr2)); // Output: [5, 4, 3, 2, 1]
 
 // ....
 
+// Functional Programming Style (chaining and expressive) O(n^2) time in worst case)
+function reverseArrayFunctional(arr) {
+    // validation
+    if(!Array.isArray(arr)){
+        throw new Error('Input must be an array');
+    }
+    return arr.reduce((acc, val) => [val, ...acc], []); 
+}
+
+// .reverse() (Mutates Original)
+function reverseArrayBuiltIn(arr) {
+    // validation
+    if(!Array.isArray(arr)){
+        throw new Error('Input must be an array');
+    }
+    return arr.reverse();
+}
+
+// (Preserve Original)
+function reverseArrayBuiltInCopy(arr) {
+    // Input validation
+    if(!Array.isArray(arr)){
+        throw new Error('Input must be an array');
+    }
+    return [...arr].reverse();
+}
